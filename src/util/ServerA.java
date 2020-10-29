@@ -11,22 +11,22 @@ public class ServerA
     {
 
     	 try {
-             ServerSocket s = new ServerSocket(9999);
+             ServerSocket s = new ServerSocket(5056);
              String str;
              while (true) {
                  Socket c = s.accept();
                  InputStream i = c.getInputStream();
                  OutputStream o = c.getOutputStream();
                  do {
-                     byte[] line = new byte[100];                    
+                     byte[] line = new byte[500];                    
                      i.read(line);
                      str = new String(line);
                      
-                     String total = calcular(str);
-                     o.write(total.getBytes());                
-//                     System.out.println(str.trim());
-//                     str = new String(line);
-                     		
+                     String total = "R=" +calcular(str);
+                     System.out.println(total);
+                   
+                     o.write(total.getBytes());
+
                  } while ( !str.trim().equals("s") );
                  c.close();
              }

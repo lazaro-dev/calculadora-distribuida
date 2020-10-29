@@ -18,14 +18,13 @@ public class ServerB
                  InputStream i = c.getInputStream();
                  OutputStream o = c.getOutputStream();
                  do {
-                     byte[] line = new byte[100];
+                     byte[] line = new byte[300];
                      i.read(line);
                      str = new String(line);
                  
-                     String total = calcular(str);
+                     String total = "R=" +calcular(str);
                      o.write(total.getBytes());
-//                     System.out.println(str.trim());
-//                     str = new String(line);
+
                      		
                  } while ( !str.trim().equals("s") );
                  c.close();
