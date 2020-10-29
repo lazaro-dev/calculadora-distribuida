@@ -63,7 +63,7 @@ public class ServerB
   		
   		switch (str1[1]) {
   		case "%":  			
-  			return "" + (Double.parseDouble(str1[0]) * (Double.parseDouble(str1[2])/100.00) );
+  			return "" + (Double.parseDouble(str1[0]) * (Double.parseDouble(str1[2])/100.00) )+"%";
   			
   		case "^":
   			return "" + Math.pow(Double.parseDouble(str1[0]), Double.parseDouble(str1[2]));
